@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+  background: rgb(255, 183, 0);
+}
+h1{
+  text-align: center;
+}
+.booking_page{
+  /* height: 90%; */
+  margin-top: 10px;
+  margin-left: 40px;
+  max-width: 700px;
+  background: white;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+}
+.A1{
+  background-color: blue;
+  color: blue;
+}
+
+.select {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.information #book{
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+    width:20%;
+    display: block;
+    margin: 0 auto; 
+}
+
+.information #book:hover{
+  background-color: black;
+  color:white;
+
+}
+
+.select h1 {
+  width: 60%;
+  margin: 100px auto 35px auto;
+}
+.select label {
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.information p{
+  text-align: center;
+}
+
+.select select {
+  border: 2px solid #ccc;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: 300px; 
+}
+
+.select select option {
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: none;
+}
+
+.exit {
+  position: relative;
+  height: 50px;
+}
+.exit:before, .exit:after{
+  content: "EXIT";
+  font-size: 14px;
+  line-height: 18px;
+  padding: 2px 2px 2px 2px;
+  display: block;
+  position: absolute;
+  background: red;
+  color: white;
+  top: 50%;
+  margin-left: 5px;
+  transform: translate(0, -50%);
+  border-radius: 5px;
+}
+.exit:after {
+  right: 10px;
+}
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.seats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.seat {
+  display: flex;
+  flex: 0 0 14.28%;
+  padding: 5px;
+  position: relative;
+}
+
+.seat label {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bolder;
+  line-height: 1.5rem;
+  padding: 4px 0;
+  background: #5bfc60;
+  border-radius: 5px; 
+  color: black; 
+}
+
+.seat label:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0px 2px green;
+ 
+}
+
+.seat:nth-child(3) {
+  margin-right: 14%;
+}
+.seat input[type=checkbox] {
+  position: absolute;
+}
+.seat input[type=checkbox]:checked + label {
+  background: yellow;
+}
+li.seat label.booked {
+  background-color:blue !important;
+}
+#timer{
+  font-weight: bold;
+  text-align: center;
+}

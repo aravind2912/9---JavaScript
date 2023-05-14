@@ -1,0 +1,513 @@
+<html lang="en" >
+<head>
+  <title>CSS seat booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="seat.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <div class="booking_page">
+    <div class="select">
+      <h2>Please select your seats</h2>
+      <h3>|SCREEN THIS WAY|</h3><br><br>
+
+    <!-- selecting movie -->
+      <div class="dropdown">
+      <label for="movie-select">Select a movie:</label>
+      <select id="movie-select" onchange="loadSeats()">
+        
+        <!-- <option value="">--Select a movie--</option> -->
+        <option value="theri">DOCTOR</option>
+        <option value="kaala">VIKRAM</option>
+        <option value="mank">THERI</option>
+      </select>
+    </div>
+    <label for="show-time">Select a show timing:</label>
+        <select id="show-time" name="show-time">
+          <optgroup label="Doctor">
+            <option value="doctor-10am">10:00 AM</option>
+            <option value="doctor-1pm">1:00 PM</option>
+            <option value="doctor-4pm">4:00 PM</option>
+            <option value="doctor-7pm">7:00 PM</option>
+          </optgroup>
+          <optgroup label="Vikram">
+            <option value="Vikaram-11am">11:00 AM</option>
+            <option value="vikram-2pm">2:00 PM</option>
+            <option value="vikram-5pm">5:00 PM</option>
+            <option value="vikram-8pm">8:00 PM</option>
+          </optgroup>
+          <optgroup label="Theri">
+            <option value="theri-12pm">12:00 PM</option>
+            <option value="theri-3pm">3:00 PM</option>
+            <option value="theri-6pm">6:00 PM</option>
+            <option value="theri-9pm">9:00 PM</option>
+          </optgroup>
+        </select>
+    </div>
+    <br>
+    <div id="timer"></div>
+   
+    <div class="exit"></div>
+  <ol id="seats-list">
+    <li>
+      <ol class="seats">
+        <li class="seat">
+          <input type="checkbox" id="1A"disabled />
+          <label for="1A" class="booked" >1A</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="1B" disabled/>
+          <label for="1B"class="booked" >1B</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="1C" />
+          <label for="1C">1C</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="1D" />
+          <label for="1D">1D</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="1E" disabled/>
+          <label for="1E" class="booked">1E</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="1F" />
+          <label for="1F">1F</label>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <ol class="seats">
+        <li class="seat">
+          <input type="checkbox" id="2A" />
+          <label for="2A">2A</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="2B" disabled/>
+          <label for="2B" class="booked">2B</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="2C" />
+          <label for="2C">2C</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="2D" disabled/>
+          <label for="2D"class="booked">2D</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="2E" disabled/>
+          <label for="2E"class="booked">2E</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="2F" disabled/>
+          <label for="2F"class="booked">2F</label>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <ol class="seats">
+        <li class="seat">
+          <input type="checkbox" id="3A" />
+          <label for="3A">3A</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="3B" disabled/>
+          <label for="3B"class="booked">3B</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="3C" />
+          <label for="3C">3C</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="3D" disabled/>
+          <label for="3D"class="booked">3D</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="3E" />
+          <label for="3E">3E</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="3F" disabled/>
+          <label for="3F"class="booked">3F</label>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <ol class="seats">
+        <li class="seat">
+          <input type="checkbox" id="4A" />
+          <label for="4A">4A</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="4B" />
+          <label for="4B">4B</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="4C" />
+          <label for="4C">4C</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="4D" />
+          <label for="4D">4D</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="4E" />
+          <label for="4E">4E</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="4F" />
+          <label for="4F">4F</label>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <ol class="seats">
+        <li class="seat">
+          <input type="checkbox" id="5A" />
+          <label for="5A">5A</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="5B" />
+          <label for="5B">5B</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="5C" />
+          <label for="5C">5C</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="5D" />
+          <label for="5D">5D</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="5E" />
+          <label for="5E">5E</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="5F" />
+          <label for="5F">5F</label>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <ol class="seats">
+        <li class="seat">
+          <input type="checkbox" id="6A" />
+          <label for="6A">6A</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="6B" />
+          <label for="6B">6B</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="6C" />
+          <label for="6C">6C</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="6D" />
+          <label for="6D">6D</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="6E" />
+          <label for="6E">6E</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="6F" />
+          <label for="6F">6F</label>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <ol class="seats">
+        <li class="seat">
+          <input type="checkbox" id="7A" />
+          <label for="7A">7A</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="7B" />
+          <label for="7B">7B</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="7C" />
+          <label for="7C">7C</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="7D" />
+          <label for="7D">7D</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="7E" />
+          <label for="7E">7E</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="7F" />
+          <label for="7F">7F</label>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <ol class="seats">
+        <li class="seat">
+          <input type="checkbox" id="8A" />
+          <label for="8A">8A</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="8B" />
+          <label for="8B">8B</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="8C" />
+          <label for="8C">8C</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="8D" />
+          <label for="8D">8D</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="8E" />
+          <label for="8E">8E</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="8F" />
+          <label for="8F">8F</label>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <ol class="seats">
+        <li class="seat">
+          <input type="checkbox" id="9A" />
+          <label for="9A">9A</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="9B" />
+          <label for="9B">9B</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="9C" />
+          <label for="9C">9C</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="9D" />
+          <label for="9D">9D</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="9E" />
+          <label for="9E">9E</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="9F" />
+          <label for="9F">9F</label>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <ol class="seats">
+        <li class="seat">
+          <input type="checkbox" id="10A" />
+          <label for="10A">10A</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="10B" />
+          <label for="10B">10B</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="10C" />
+          <label for="10C">10C</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="10D" />
+          <label for="10D">10D</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="10E" />
+          <label for="10E">10E</label>
+        </li>
+        <li class="seat">
+          <input type="checkbox" id="10F" />
+          <label for="10F">10F</label>
+        </li>
+      </ol>
+    </li>
+  </ol>
+  <div id="available-seats"></div>
+  <div id="booked-seats"></div>
+
+  <div class="exit"></div>
+  
+
+  </div>
+  <div class="information">
+  <strong><p>Total price: <span id="total">$0</span></p></strong>
+  <p>Selected seats: <span id="selectedSeats">0</span></p>
+  <button id="book">Book Ticket</button>
+</div>
+
+</div>
+
+
+
+
+<section class="top-bar">
+  <div class="left-content">
+      <h2 class="title">Cinemas - NOW SHOWING</h2><br><br>
+  </div>
+  <div>
+    <label for="search-input"><b>Search for movie title:</b></label>
+    <input type="text" id="search-input" placeholder="Enter a movie title...">
+    <button id="search-button">Search</button>
+  </div><br>
+  <div>
+    <label for="genre-select"><b>Filter by genre:</b></label>
+    <select id="genre-select">
+      <option value="all">All</option>
+      <option value="action">Action</option>
+      <option value="comedy">Comedy</option>
+      <option value="drama">Drama</option>
+    </select>
+  </div><br>
+  <div class="current-movies">
+      <div class="current-movie" data-genre="action">
+          <div class="cm-img-box">
+              <img src="assets/images/movie1.jpg" alt="">
+          </div>
+          <h3 class="movie-title">DOCTOR</h3>
+          <p class="screen-name">Timing:</p>
+          <div class="timing">
+            <b>10.00am</b><br>
+            <b>1.00pm</b><br>
+            <b>4.00pm</b><br>
+            <b>7.00pm</b>
+          </div>
+      </div>
+      <div class="current-movie" data-genre="comedy">
+          <div class="cm-img-box">
+              <img src="assets/images/movie2.jpg" alt="">
+          </div>
+          <h3 class="movie-title">VIKRAM</h3>
+          <p class="screen-name">Timing:</p>
+          <div class="timing">
+            <b>11.00am</b><br>
+           <b>2.00pm</b><br>
+           <b>5.00pm</b><br>
+           <b>8.00pm</b>
+          </div>
+      </div>
+      <div class="current-movie" data-genre="drama">
+          <div class="cm-img-box">
+              <img src="assets/images/movie3.jpg" alt="">
+          </div>
+          <h3 class="movie-title">THERI</h3>
+          <p class="screen-name">Timing:</p>
+          <div class="timing">
+           <b>12.00pm</b><br>
+            <b>3.00pm</b><br>
+           <b>6.00pm</b><br>
+           <b>9.00pm</b>
+          </div>
+      </div>
+  </div>
+
+  <script>
+    const bookedSeats = ["1A", "1B", "1E", "2B", "2D", "2E", "2F", "3B", "3D", "3F"];
+    
+    //searchbar
+      const searchButton = document.getElementById('search-button');
+      searchButton.addEventListener('click', search);
+      function search() {
+      const searchTerm = document.getElementById('search-input').value.toLowerCase();
+      const movies = document.querySelectorAll('.current-movie');
+      let found = false;
+
+      movies.forEach(movie => {
+        const title = movie.querySelector('.movie-title').textContent.toLowerCase();
+        if (title.includes(searchTerm)) {
+          movie.style.display = 'block';
+          found = true;
+        } else {
+          movie.style.display = 'none';
+        }
+      });
+
+      if (!found) {
+        alert('Movie not found!');
+      }
+    }
+
+        //genre filter
+        const selectElement = document.querySelector('#genre-select');
+        const movieElements = document.querySelectorAll('.current-movie');
+
+        selectElement.addEventListener('change', () => {
+          const selectedGenre = selectElement.value;
+          movieElements.forEach((movieElement) => {
+            if (selectedGenre === 'all' || movieElement.dataset.genre === selectedGenre) {
+              movieElement.style.display = 'block';
+            } else {
+              movieElement.style.display = 'none';
+            }
+          });
+        });
+
+      //timer
+        const eventDate = new Date("2023-05-14");
+        const timerElement = document.getElementById("timer");
+        const timerInterval = setInterval(() => {
+          const now = new Date();
+          const timeLeft = eventDate - now;
+        if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        timerElement.textContent = "Event has already started!";
+        return;
+      }
+      const hoursLeft = Math.floor(timeLeft / (1000 * 60 * 60));
+      const minutesLeft = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const secondsLeft = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      const timeLeftString = `${hoursLeft.toString().padStart(2, "0")}:${minutesLeft.toString().padStart(2, "0")}:${secondsLeft.toString().padStart(2, "0")}`;
+      timerElement.textContent = `Next Movie Starts In: ${timeLeftString}`;
+    }, 1000);
+
+
+
+
+    //Total price and seats
+
+    let selectedSeats = [];
+    const ticketPrice = 10;
+    const seats = document.querySelectorAll('.seat input');
+    seats.forEach(seat => {
+  seat.addEventListener('click', (e) => {
+    e.target.parentNode.classList.toggle('selected');
+    const seatId = e.target.getAttribute('id');
+
+    if (e.target.checked) {
+      selectedSeats.push(seatId);
+    } else {
+      selectedSeats = selectedSeats.filter(id => id !== seatId);
+    }
+    updateBookingInfo();
+  });
+});
+const BookButton = document.getElementById('book');
+BookButton.addEventListener('click', () => {
+  if (selectedSeats.length === 0) {
+    alert('Please select at least one seat');
+    return;
+  }
+  const totalPrice = selectedSeats.length * ticketPrice;
+  document.getElementById('total').innerText = `$${totalPrice}`;
+  document.getElementById('selectedSeats').innerText = selectedSeats.length;
+  selectedSeats = [];
+  alert(`Tickets booked successfully!\nTotal price: $${totalPrice}`);
+  });
+  function updateBookingInfo() {
+    const totalPrice = selectedSeats.length * ticketPrice;
+    const numSelectedSeats = selectedSeats.length;
+    document.getElementById('total').innerText = `$${totalPrice}`;
+    document.getElementById('selectedSeats').innerText = numSelectedSeats;
+  }
+  </script>
+</section>
+</body>
+</html>

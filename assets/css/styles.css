@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+
+*{
+    margin:0px;
+    max-width: 650px; 
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+.top-bar{
+    margin-left:750px;
+    margin-top: -780px;
+}
+.title{
+    text-align: center;
+}
+#search-input {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    width:40%;
+  }
+  
+  #search-button {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+    width:20%;
+  }
+  
+  .timing {
+    text-align: center;
+  }
+  .movie-title {
+    text-align: center;
+  }
+  .screen-name{
+    text-align: center;
+  }
+  label, select {
+    font-size: 16px;
+    margin-right: 10px;
+    width: 20%;
+  }
+.cm-img-box{
+    position: relative;
+    height:50%;
+    width:100%;
+    /* margin-top:10px; */
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+.current-movies{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.5rem;
+}
+.current-movie{
+    background:linear-gradient(45deg,rgba(255, 0, 0, 0.5),rgba(0, 0, 0, 0.15)) ;
+    padding: 1rem;
+    border-radius: .5 rem;
+}
+.movie-title{
+    color:white;
+    margin-bottom: 2rem;
+
+}
+.booking{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.timing{
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+}
+.timing:hover{
+    color: rgb(117, 107, 107);
+}
+.btn{
+    color:rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 10px;
+}
+.btn:hover{
+    color: black;
+    background-color: rgb(255, 200, 0);
+}
+.head{
+    text-align: center;
+}
